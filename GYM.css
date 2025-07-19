@@ -59,16 +59,35 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
 }
 
 .hero-content h2 {
   font-size: 3rem;
   margin-bottom: 15px;
+  animation: fadeInUp 1s ease-in-out;
 }
 
 .hero-content p {
   font-size: 1.2rem;
   margin-bottom: 25px;
+  animation: fadeInUp 1.2s ease-in-out;
 }
 
 .btn {
@@ -81,11 +100,13 @@ body {
   cursor: pointer;
   text-decoration: none;
   transition: 0.3s ease;
+  box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3);
 }
 
 .btn:hover {
-  background-color: white;
-  color: black;
+  background-color: #fff;
+  color: #f39c12;
+  transform: scale(1.05);
 }
 
 .about-section,
@@ -94,6 +115,7 @@ body {
   padding: 60px 8%;
   background-color: #1a1a1a;
   text-align: center;
+  animation: fadeInUp 0.8s ease-in-out;
 }
 
 .about-container,
@@ -117,6 +139,29 @@ body {
   color: #ccc;
 }
 
+.testimonial-section {
+  padding: 60px 8%;
+  background-color: #1e1e1e;
+  text-align: center;
+  animation: fadeInUp 0.8s ease-in-out;
+}
+
+.testimonial {
+  margin: 20px auto;
+  max-width: 500px;
+  background: #222;
+  padding: 20px;
+  border-radius: 10px;
+  color: #eee;
+}
+
+.testimonial span {
+  display: block;
+  margin-top: 10px;
+  font-style: italic;
+  color: #f39c12;
+}
+
 form input {
   width: 100%;
   padding: 12px;
@@ -124,6 +169,14 @@ form input {
   border-radius: 6px;
   border: none;
   font-size: 1rem;
+}
+
+form label {
+  display: block;
+  margin: 10px 0 5px;
+  text-align: left;
+  color: #f39c12;
+  font-weight: 500;
 }
 
 form button {
@@ -143,11 +196,51 @@ form button:hover {
   background-color: white;
 }
 
+.success-message {
+  background-color: #1a1a1a;
+  padding: 40px;
+  margin-top: 30px;
+  border-radius: 10px;
+  text-align: center;
+  color: #f1f1f1;
+  animation: fadeInUp 0.8s ease-in-out;
+}
+
+.success-message h3 {
+  color: #f39c12;
+  margin-bottom: 10px;
+}
+
 .footer {
   padding: 20px;
   text-align: center;
   background-color: #111;
   color: gray;
+}
+
+.top-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: 10px 15px;
+  background-color: #f39c12;
+  color: black;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 99;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (max-width: 768px) {

@@ -6,9 +6,9 @@
   <title>Faizan's Fitness Gym</title>
   <link rel="stylesheet" href="GYM.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <meta name="description" content="Transform your body and mind at Faizan Fitness Gym — Sahiwal's most trusted gym.">
 </head>
 <body>
-
 
   <header class="navbar">
     <div class="logo">
@@ -25,7 +25,6 @@
     </nav>
   </header>
 
-  
   <section class="hero" id="hero">
     <div class="hero-content">
       <h2>Push Your Limits</h2>
@@ -34,7 +33,6 @@
     </div>
   </section>
 
- 
   <section class="about-section" id="about">
     <div class="about-container">
       <h2>About Us</h2>
@@ -42,21 +40,44 @@
     </div>
   </section>
 
-  
-  <section class="form-section" id="join">
-    <div class="form-container">
-      <h2>Join Our Gym</h2>
-      <form action="noaction.php" method="post">
-        <input type="text" placeholder="Enter your Name" required />
-        <input type="number" placeholder="Enter your Age" required />
-        <input type="text" placeholder="Enter your Gender" required />
-        <input type="text" placeholder="Enter your Location" required />
-        <button type="submit" class="btn">Submit</button>
-      </form>
+  <section class="testimonial-section">
+    <h2>What Our Members Say</h2>
+    <div class="testimonial">
+      <p>"Amazing trainers and great atmosphere!"</p>
+      <span>- Ahsan M.</span>
+    </div>
+    <div class="testimonial">
+      <p>"I achieved my goals within 3 months!"</p>
+      <span>- Sara A.</span>
     </div>
   </section>
 
-  
+  <section class="form-section" id="join">
+    <div class="form-container">
+      <h2>Join Our Gym</h2>
+      <form id="gymForm">
+        <label>Name</label>
+        <input type="text" name="name" placeholder="Your name" required />
+
+        <label>Age</label>
+        <input type="number" name="age" placeholder="Your age" required />
+
+        <label>Gender</label>
+        <input type="text" name="gender" placeholder="Your gender" required />
+
+        <label>Location</label>
+        <input type="text" name="location" placeholder="Your location" required />
+
+        <button type="submit" class="btn">Submit</button>
+      </form>
+
+      <div id="successMessage" class="success-message" style="display:none;">
+        <h3>🎉 Thank you for joining Faizan Fitness Gym!</h3>
+        <p>We will contact you soon. Stay strong!</p>
+      </div>
+    </div>
+  </section>
+
   <section class="contact-section" id="contact">
     <div class="contact-container">
       <h2>Contact Us</h2>
@@ -66,10 +87,11 @@
     </div>
   </section>
 
- 
   <footer class="footer">
     <p>© 2025 Faizan Fitness. All Rights Reserved.</p>
   </footer>
 
+  <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="top-btn">↑</button>
+  <script src="GYM.js"></script>
 </body>
 </html>
