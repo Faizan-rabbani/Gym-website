@@ -18,9 +18,15 @@ body {
   align-items: center;
   padding: 1rem 5%;
   background-color: #000;
-  position: sticky;
-  top: 0;
   z-index: 100;
+}
+
+/* Sticky only for desktop */
+@media (min-width: 769px) {
+  .navbar {
+    position: sticky;
+    top: 0;
+  }
 }
 
 .logo {
@@ -232,6 +238,14 @@ form button:hover {
   z-index: 99;
 }
 
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: white;
+}
+
+/* Animations */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -243,12 +257,31 @@ form button:hover {
   }
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  nav {
+    position: relative;
+    width: 100%;
+  }
+
   .nav-links {
     flex-direction: column;
-    gap: 10px;
+    align-items: flex-start;
     background-color: #000;
     padding: 10px;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    display: none;
+  }
+
+  .navbar.open .nav-links {
+    display: flex;
   }
 
   .hero-content h2 {
